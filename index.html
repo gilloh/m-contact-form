@@ -7,7 +7,10 @@
 </head>
 <body>
     <h2>Contact Us</h2>
-    <form id="contactForm">
+    
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="a9491180-456a-4ca3-ad96-38cd8617dfd9">
+
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required><br>
         <label for="email">Email:</label><br>
@@ -17,7 +20,7 @@
         <button type="submit">Submit</button>
     </form>
 
-    <script>
+    <script src="https://web3forms.com/client/script.js" async defer>
         document.getElementById("contactForm").addEventListener("submit", function(event) {
             event.preventDefault();
             const formData = new FormData(this);
