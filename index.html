@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<body>
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "https://api.example.com/send-email"); // Replace with your server URL
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        alert("Message sent successfully!");
+                        document.getElementById("contactForm").reset();
+                    } else {
+                        alert("There was a problem sending your message. Please try again later.");
+                    }
+                }
+            };
+            const data = JSON.stringify({
+                name: formData.get("name"),
+                email: formData.get("email"),
+                message: formData.get("message")
+            });
+            xhr.send(data);
+        });
+    </script>
+</body>
+</html>
