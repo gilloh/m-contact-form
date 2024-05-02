@@ -1,49 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
+    <title>Mellos Moving Ltd.</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+    </style>
 </head>
+
 <body>
-    <h2>Contact Us</h2>
-    
-    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="a9491180-456a-4ca3-ad96-38cd8617dfd9">
+    <div class="container">
+        <div class="header">
+            <img src="images/logo.jpeg" alt="Company Logo" class="logo">
+            <h1>Contact Form</h1>
+            </p>
+        </div>
 
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br>
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" required></textarea><br>
-        <button type="submit">Submit</button>
-    </form>
+        <form id="contactForm">
+            <!-- Section -1: Client's Detail Information -->
+            <div class="section">
+                <div class="section-title">Your Detail Information:</div>
+                <div class="input-group">
+                    <label for="client_name">Name:</label>
+                    <input type="text" id="client_name" name="client_name" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone_number">Phone Number:</label>
+                    <input type="tel" id="phone_number" name="phone_number" required pattern="[0-9]{11}">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="move_date_time">Preferred date and time of the move:</label>
+                    <input type="datetime-local" id="move_date_time" name="move_date_time" required>
+                </div>
+                <div class="input-group">
+                    <label for="travel_with_van">Would you be traveling with the van to the destination?</label>
+                    <select id="travel_with_van" name="travel_with_van">
+                        <option value="No" selected>No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="how_heard">How did you hear about us?</label>
+                    <select id="how_heard" name="how_heard">
+                        <option value="Search Engine">Search Engine</option>
+                        <option value="Ads">Ads</option>
+                        <option value="Company Card">Company Card</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="additional_info">Any additional information about the move?</label>
+                    <textarea id="additional_info" name="additional_info" rows="4"></textarea>
+                </div>
+            </div>
 
-    <script src="https://web3forms.com/client/script.js" async defer>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const formData = new FormData(this);
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://api.example.com/send-email"); // Replace with your server URL
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status === 200) {
-                        alert("Message sent successfully!");
-                        document.getElementById("contactForm").reset();
-                    } else {
-                        alert("There was a problem sending your message. Please try again later.");
-                    }
-                }
-            };
-            const data = JSON.stringify({
-                name: formData.get("name"),
-                email: formData.get("email"),
-                message: formData.get("message")
-            });
-            xhr.send(data);
-        });
-    </script>
+            <!-- Section Zero: How many 3.5t Luton Vans? -->
+            <div class="section">
+                <div class="section-title">How many 3.5t Luton Vans?</div>
+                <div class="input-group">
+                    <input type="number" id="num_of_vans" name="num_of_vans" required>
+                </div>
+            </div>
+
+            <!-- First Section: Collection Full Address -->
+            <div class="section">
+                <div class="section-title">Collection Full Address</div>
+                <div class="input-group">
+                    <label for="collection_street">Street Address:</label>
+                    <input type="text" id="collection_street" name="collection_street" required>
+                </div>
+                <div class="input-group">
+                    <label for="collection_city">City:</label>
+                    <input type="text" id="collection_city" name="collection_city" required>
+                </div>
+                <div class="input-group">
+                    <label for="collection_postcode">Postal Code:</label>
+                    <input type="text" id="collection_postcode" name="collection_postcode" required
+                        pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}">
+                </div>
+            </div>
+
+            <!-- Second Section: Delivery Full Address -->
+            <div class="section">
+                <div class="section-title">Delivery Full Address</div>
+                <div class="input-group">
+                    <label for="delivery_street">Street Address:</label>
+                    <input type="text" id="delivery_street" name="delivery_street" required>
+                </div>
+                <div class="input-group">
+                    <label for="delivery_city">City:</label>
+                    <input type="text" id="delivery_city" name="delivery_city" required>
+                </div>
+                <div class="input-group">
+                    <label for="delivery_postcode">Postal Code:</label>
+                    <input type="text" id="delivery_postcode" name="delivery_postcode" required
+                        pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}">
+                </div>
+            </div>
+
+            <!-- Third Section: Number of Men -->
+            <div class="section">
+                <div class="section-title">How many men would you prefer to come?</div>
+                <div class="input-group">
+                    <select id="num_of_men" name="num_of_men" required>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Fourth Section: Total Miles -->
+            <div class="section">
+                <div class="section-title">How many Miles total?</div>
+                <div class="input-group">
+                    <input type="number" id="total_miles" name="total_miles" required>
+                </div>
+            </div>
+
+            <!-- Fifth Section: Total Stairs -->
+            <div class="section">
+                <div class="section-title">What are the total amount of stairs involved in your move with both
+                    addresses?</div>
+                <div class="input-group">
+                    <input type="number" id="total_stairs" name="total_stairs" required>
+                    <p>flights of stair</p>
+                </div>
+            </div>
+
+            <!-- Sixth Section: Hours Needed -->
+            <div class="section">
+                <div class="section-title">How many hours would you need our service?</div>
+                <div class="input-group">
+                    <input type="number" id="hours_needed" name="hours_needed" step="0.5" required>
+                </div>
+            </div>
+
+            <!-- Seventh Section: Additional Service -->
+            <div class="section">
+                <div class="section-title">Would you like to opt for an additional service of complete Package and move?
+                </div>
+                <div class="input-group">
+                    <select id="additional_service" name="additional_service" required>
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Eighth Section: Congestion Zone -->
+            <div class="section">
+                <div class="section-title">Is any of the addresses part of the congestion zone?</div>
+                <div class="input-group">
+                    <select id="congestion_zone" name="congestion_zone" required>
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" onclick="showPreview()">Preview Quotation</button>
+            </div>
+        </form>
+
+        <!-- Preview Section -->
+        <div id="preview" class="preview-container">
+            <h2>Quotation Summary</h2>
+            <p><strong>Client's Details:</strong></p>
+            <p><strong>Name:</strong> <span id="preview_client_name"></span></p>
+            <p><strong>Phone Number:</strong> <span id="preview_phone_number"></span></p>
+            <p><strong>Email:</strong> <span id="preview_email"></span></p>
+            <p><strong>Preferred date and time of the move:</strong> <span id="preview_move_date_time"></span></p>
+            <p><strong>Traveling with the van:</strong> <span id="preview_travel_with_van"></span></p>
+            <p><strong>How did you hear about us:</strong> <span id="preview_how_heard"></span></p>
+            <p><strong>Additional Information:</strong> <span id="preview_additional_info"></span></p>
+            <p><strong>Number of 3.5t Luton Vans:</strong> <span id="preview_num_of_vans"></span></p>
+            <p><strong>Collection Full Address:</strong></p>
+            <p id="preview_collection_address"></p>
+            <p><strong>Delivery Full Address:</strong></p>
+            <p id="preview_delivery_address"></p>
+            <p><strong>Number of Men:</strong> <span id="preview_num_of_men"></span></p>
+            <p><strong>Total Miles:</strong> <span id="preview_total_miles"></span></p>
+            <p><strong>Total Stairs:</strong> <span id="preview_total_stairs"></span> flights of stairs</p>
+            <p><strong>Hours Needed:</strong> <span id="preview_hours_needed"></span></p>
+            <p><strong>Additional Service:</strong> <span id="preview_additional_service"></span></p>
+            <p><strong>Congestion Zone:</strong> <span id="preview_congestion_zone"></span></p>
+            <div class="button-group">
+                <button type="submit" form="contactForm">Submit</button>
+                <button type="button" onclick="hidePreview()">Back</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms & Conditions Popup -->
+    <div class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h1>Terms and Conditions</h1>
+            <!-- Include the terms content here -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Mellos Moving Ltd. All rights reserved. | <a href="terms.html" id="termsLink"
+            class="footer-link">Terms and
+            Conditions</a>
+    </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>
