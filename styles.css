@@ -29,23 +29,20 @@ body {
 footer {
     background-color: #333;
     color: #fff;
-    padding: 15px 20px;
+    padding: 5px 10px;
     text-align: center;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
 
 .footer-link {
     color: #007bff;
-    /* Light blue color */
     text-decoration: none;
-    /* Remove underline */
 }
 
 .footer-link:hover {
     text-decoration: underline;
-    /* Add underline on hover */
 }
 
 .popup {
@@ -83,13 +80,16 @@ footer {
 }
 
 .van-image {
-    width: 200px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-left: auto; /* Adjust the margin as needed */
+    width: 200px;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-left: auto;
+    /* Adjust the margin as needed */
 }
 
 .section {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .section-title {
@@ -104,7 +104,7 @@ footer {
 
 .input-group label {
     display: block;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
 }
 
 .input-group input[type="text"],
