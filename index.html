@@ -20,7 +20,9 @@
             </p>
         </div>
 
-        <form id="contactForm">
+        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+            <input type="hidden" name="access_key" value="a9491180-456a-4ca3-ad96-38cd8617dfd9">
+
             <!-- Section -1: Client's Detail Information -->
             <div class="section">
                 <div class="section-title">Your Detail Information:</div>
@@ -29,7 +31,7 @@
                     <input type="text" id="client_name" name="client_name" required>
                 </div>
                 <div class="input-group">
-                    <label for="phone_number">Phone Number (+44 20 7123 4567 format):</label>
+                    <label for="phone_number">Phone Number:</label>
                     <input type="tel" id="phone_number" name="phone_number" required pattern="[0-9]{11}">
                 </div>
                 <div class="input-group">
@@ -47,15 +49,6 @@
                         <option value="Yes">Yes</option>
                     </select>
                 </div>
-                <!-- <div class="input-group">
-                    <label for="how_heard">How did you hear about us?</label>
-                    <select id="how_heard" name="how_heard">
-                        <option value="Search Engine">Search Engine</option>
-                        <option value="Ads">Ads</option>
-                        <option value="Company Card">Company Card</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div> -->
                 <div class="input-group">
                     <label for="additional_info">Any additional information about the move?</label>
                     <textarea id="additional_info" name="additional_info" rows="4"></textarea>
@@ -200,7 +193,8 @@
             <p><strong>Additional Service:</strong> <span id="preview_additional_service"></span></p>
             <p><strong>Congestion Zone:</strong> <span id="preview_congestion_zone"></span></p>
             <div class="button-group">
-                <button type="submit" form="contactForm">Submit</button>
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                <button type="submit">Submit</button>
                 <button type="button" onclick="hidePreview()">Back</button>
             </div>
         </div>
@@ -224,13 +218,7 @@
                 Conditions</a></p>
     </footer>
     <script src="script.js"></script>
-    <script>
-        // Function to show the preview when form is submitted
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the form from submitting
-            showPreview(); // Call the function to show the preview
-        });
-    </script>
+    </form>
 </body>
 
 </html>

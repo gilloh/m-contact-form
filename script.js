@@ -1,14 +1,3 @@
-function validatePhoneNumber(phoneNumber) {
-    // Regular expression for UK phone number
-    var phoneRegex = /^(?:(?:\+|00)44|0)7(?:[45789]\d{2}|624)\d{6}$/;
-    return phoneRegex.test(phoneNumber);
-}
-
-function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
 function showError(message) {
     var errorElement = document.createElement('p');
     errorElement.style.color = 'red';
@@ -30,24 +19,12 @@ function showPreview() {
     var email = document.getElementById('email').value.trim();
     var moveDateTime = document.getElementById('move_date_time').value.trim();
 
-    // if (clientName === '' || phoneNumber === '' || email === '' || moveDateTime === '') {
-    //     showError('Please fill in all mandatory fields.');
-    //     return;
-    // }
-
-    // // Validate phone number
-    // if (!validatePhoneNumber(phoneNumber)) {
-    //     showError('Please enter a valid UK phone number.');
-    //     return;
-    // }
-
     // Populate preview data
     document.getElementById('preview_client_name').textContent = clientName;
     document.getElementById('preview_phone_number').textContent = phoneNumber;
     document.getElementById('preview_email').textContent = email;
     document.getElementById('preview_move_date_time').textContent = moveDateTime;
     document.getElementById('preview_travel_with_van').textContent = document.getElementById('travel_with_van').value;
-    document.getElementById('preview_how_heard').textContent = document.getElementById('how_heard').value;
     document.getElementById('preview_additional_info').textContent = document.getElementById('additional_info').value;
     document.getElementById('preview_num_of_vans').textContent = document.getElementById('num_of_vans').value;
     document.getElementById('preview_collection_address').textContent = document.getElementById('collection_street').value + ', ' + document.getElementById('collection_city').value + ', ' + document.getElementById('collection_postcode').value;
@@ -62,6 +39,10 @@ function showPreview() {
     // Show the preview
     document.getElementById('preview').classList.add('active');
     document.getElementById('preview').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function hidePreview() {
+    document.getElementById('preview').classList.remove('active');
 }
 
 document.querySelector('#termsLink').addEventListener('click', function(event) {
@@ -81,5 +62,5 @@ document.getElementById('previewButton').addEventListener('click', function(even
     showPreview(); // Call the function to show the preview
 });
 
-document.querySelector('button[type="button"]').addEventListener('click', showPreview);
+document.getElementById('previewButton').addEventListener('click', showPreview);
 
