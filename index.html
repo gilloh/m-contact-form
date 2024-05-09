@@ -24,11 +24,11 @@
             <div class="section">
                 <div class="section-title">Your Detail Information:</div>
                 <div class="input-group">
-                    <label for="client_name">Name:</label>
+                    <label for="client_name">Full Name:</label>
                     <input type="text" id="client_name" name="client_name" required>
                 </div>
                 <div class="input-group">
-                    <label for="phone_number">Phone Number:</label>
+                    <label for="phone_number">Phone Number (+44 20 7123 4567 format):</label>
                     <input type="tel" id="phone_number" name="phone_number" required pattern="[0-9]{11}">
                 </div>
                 <div class="input-group">
@@ -40,13 +40,13 @@
                     <input type="datetime-local" id="move_date_time" name="move_date_time" required>
                 </div>
                 <div class="input-group">
-                    <label for="travel_with_van">Would you be traveling with the van to the destination?</label>
+                    <label for="travel_with_van">Would you be traveling with our van to the destination?</label>
                     <select id="travel_with_van" name="travel_with_van">
                         <option value="No" selected>No</option>
                         <option value="Yes">Yes</option>
                     </select>
                 </div>
-                <div class="input-group">
+                <!-- <div class="input-group">
                     <label for="how_heard">How did you hear about us?</label>
                     <select id="how_heard" name="how_heard">
                         <option value="Search Engine">Search Engine</option>
@@ -54,7 +54,7 @@
                         <option value="Company Card">Company Card</option>
                         <option value="Other">Other</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="input-group">
                     <label for="additional_info">Any additional information about the move?</label>
                     <textarea id="additional_info" name="additional_info" rows="4"></textarea>
@@ -64,8 +64,15 @@
             <!-- Section Zero: How many 3.5t Luton Vans? -->
             <div class="section">
                 <div class="section-title">How many 3.5t Luton Vans?</div>
+                <img src="images/van_l.jpg" alt="Van L" class="van-image">
                 <div class="input-group">
-                    <input type="number" id="num_of_vans" name="num_of_vans" required>
+                    <select id="num_of_vans" name="num_of_vans">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">3</option>
+                    </select>
+
                 </div>
             </div>
 
@@ -82,8 +89,7 @@
                 </div>
                 <div class="input-group">
                     <label for="collection_postcode">Postal Code:</label>
-                    <input type="text" id="collection_postcode" name="collection_postcode" required
-                        pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}">
+                    <input type="text" id="collection_postcode" name="collection_postcode" required>
                 </div>
             </div>
 
@@ -100,8 +106,7 @@
                 </div>
                 <div class="input-group">
                     <label for="delivery_postcode">Postal Code:</label>
-                    <input type="text" id="delivery_postcode" name="delivery_postcode" required
-                        pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}">
+                    <input type="text" id="delivery_postcode" name="delivery_postcode" required>
                 </div>
             </div>
 
@@ -113,6 +118,8 @@
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
                     </select>
                 </div>
             </div>
@@ -127,11 +134,10 @@
 
             <!-- Fifth Section: Total Stairs -->
             <div class="section">
-                <div class="section-title">What are the total amount of stairs involved in your move with both
+                <div class="section-title">What is the total flights of stairs involved in your move with both
                     addresses?</div>
                 <div class="input-group">
                     <input type="number" id="total_stairs" name="total_stairs" required>
-                    <p>flights of stair</p>
                 </div>
             </div>
 
@@ -167,7 +173,7 @@
             </div>
 
             <div class="button-group">
-                <button type="button" onclick="showPreview()">Preview Quotation</button>
+                <button type="button" id="previewButton">Preview Quotation</button>
             </div>
         </form>
 
@@ -210,12 +216,21 @@
         </div>
     </div>
 
+    <div id="error-message"></div>
+
     <footer>
-        &copy; 2024 Mellos Moving Ltd. All rights reserved. | <a href="terms.html" id="termsLink"
+        &copy; 2024 Mellos Moving Ltd. All rights reserved. <a href="terms.html" id="termsLink"
             class="footer-link">Terms and
             Conditions</a>
     </footer>
     <script src="script.js"></script>
+    <script>
+        // Function to show the preview when form is submitted
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting
+            showPreview(); // Call the function to show the preview
+        });
+    </script>
 </body>
 
 </html>
