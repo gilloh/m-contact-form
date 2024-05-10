@@ -24,7 +24,6 @@ function showPreview() {
     document.getElementById('preview_phone_number').textContent = phoneNumber;
     document.getElementById('preview_email').textContent = email;
     document.getElementById('preview_move_date_time').textContent = moveDateTime;
-    document.getElementById('preview_travel_with_van').textContent = document.getElementById('travel_with_van').value;
     document.getElementById('preview_additional_info').textContent = document.getElementById('additional_info').value;
     document.getElementById('preview_num_of_vans').textContent = document.getElementById('num_of_vans').value;
     document.getElementById('preview_collection_address').textContent = document.getElementById('collection_street').value + ', ' + document.getElementById('collection_city').value + ', ' + document.getElementById('collection_postcode').value;

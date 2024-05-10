@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Royals Movers</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <style>
 
     </style>
@@ -14,9 +18,14 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="images/logo.jpeg" alt="Company Logo" class="logo">
+            <img src="images/logo.png" alt="Company Logo" class="logo">
             <!-- <h1>The Royals Movers</h1> -->
-            <h2>- Contact Form -</h2>
+            <h3>Professional moving company</h3>
+            <p>Long Distance Moving - Office Move - House Move - Place Move</p>
+            <p>(+44) 07518 836720</p>
+            <hr>
+            </hr>
+            <h3>- Contact Form -</h3>
             </p>
         </div>
 
@@ -25,7 +34,7 @@
 
             <!-- Section -1: Client's Detail Information -->
             <div class="section">
-                <div class="section-title">Your Detail Information:</div>
+                <!-- <div class="section-title">Your Detail Information:</div> -->
                 <div class="input-group">
                     <label for="client_name">Full Name:</label>
                     <input type="text" id="client_name" name="client_name" required>
@@ -41,13 +50,6 @@
                 <div class="input-group">
                     <label for="move_date_time">Preferred date and time of the move:</label>
                     <input type="datetime-local" id="move_date_time" name="move_date_time" required>
-                </div>
-                <div class="input-group">
-                    <label for="travel_with_van">Would you be traveling with our van to the destination?</label>
-                    <select id="travel_with_van" name="travel_with_van">
-                        <option value="No" selected>No</option>
-                        <option value="Yes">Yes</option>
-                    </select>
                 </div>
                 <div class="input-group">
                     <label for="additional_info">Any additional information about the move?</label>
@@ -178,8 +180,6 @@
             <p><strong>Phone Number:</strong> <span id="preview_phone_number"></span></p>
             <p><strong>Email:</strong> <span id="preview_email"></span></p>
             <p><strong>Preferred date and time of the move:</strong> <span id="preview_move_date_time"></span></p>
-            <p><strong>Traveling with the van:</strong> <span id="preview_travel_with_van"></span></p>
-            <p><strong>How did you hear about us:</strong> <span id="preview_how_heard"></span></p>
             <p><strong>Additional Information:</strong> <span id="preview_additional_info"></span></p>
             <p><strong>Number of 3.5t Luton Vans:</strong> <span id="preview_num_of_vans"></span></p>
             <p><strong>Collection Full Address:</strong></p>
