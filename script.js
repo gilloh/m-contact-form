@@ -61,5 +61,21 @@ document.getElementById('previewButton').addEventListener('click', function(even
     showPreview(); // Call the function to show the preview
 });
 
-document.getElementById('previewButton').addEventListener('click', showPreview);
+// Add event listener for the Submit Form button
+document.getElementById('submitFormButton').addEventListener('click', function(event) {
+    // Prevent the default form submission
+    event.preventDefault(); 
+    // Call the function to show the preview
+    showPreview(); 
+});
 
+// Add event listener for the form submission success event
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    // No need to prevent default behavior as it will be handled by Web3Forms API
+    clearErrors(); // Clear any previous error messages
+});
+
+// Add event listener for the form submission error event
+document.getElementById('contactForm').addEventListener('form-error', function(event) {
+    // Optionally, you can add code here to handle the submission error event
+});

@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Royals Movers</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon-32x32.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <meta name="msapplication-square310x310logo" content="images/mstile-310x310.png">
+    <meta name="msapplication-TileColor" content="[HEXFARBE (z.B. #000000)]">
     <style>
 
     </style>
@@ -20,7 +21,7 @@
         <div class="header">
             <img src="images/logo.png" alt="Company Logo" class="logo">
             <!-- <h1>The Royals Movers</h1> -->
-            <h3>Professional moving company</h3>
+            <h3>The Right Way To Move</h3>
             <p>Long-Distance Moving - Office Relocation - Residential Move - Commercial Transfer</p>
             <p>(+44) 07518 836720</p>
             <hr>
@@ -193,10 +194,12 @@
             <p><strong>Additional Service:</strong> <span id="preview_additional_service"></span></p>
             <p><strong>Congestion Zone:</strong> <span id="preview_congestion_zone"></span></p>
             <div class="button-group">
+                <!-- <button type="button" id="previewButton">Preview Quotation</button> -->
                 <input type="hidden" name="redirect" value="https://web3forms.com/success">
                 <button type="submit">Submit</button>
                 <button type="button" onclick="hidePreview()">Back</button>
             </div>
+            </form>
         </div>
     </div>
 
@@ -206,12 +209,20 @@
             <span class="close">&times;</span>
             <h2>Terms and Conditions</h2>
             <ul>
-                <li>All our booking times are approximate. Please allow for a 20-minute margin for potential traffic and roadworks.</li>
-                <li>Customers are responsible for ensuring that items are properly packed. We do not accept liability for damage or breakage resulting from inadequate packing.</li>
-                <li>Customers must ensure that all items will fit into the new premises (e.g., wardrobe, bed, sofa, etc.). We are not insured for removing doors or creating new entrances.</li>
-                <li>If any delay is caused by the customer (e.g., incomplete packing, waiting for keys, incorrect address, etc.), we reserve the right to add an additional cost to the final bill.</li>
-                <li>All moves are covered by up to £50,000 in goods in transit insurance and up to £1,000,000 in public liability insurance, valid for up to 24 hours after the move.</li>
-                <li>In the unlikely event of damage to your items, strict conditions are placed on us by our insurance company. Any damage or loss must be reported within 24 hours of the completion of your booking. If damage is reported, corroborating pictures of the damage should be provided within 72 hours of the booking. Failure to do so may result in the inability to process a damage complaint.</li>
+                <li>All our booking times are approximate. Please allow for a 20-minute margin for potential traffic and
+                    roadworks.</li>
+                <li>Customers are responsible for ensuring that items are properly packed. We do not accept liability
+                    for damage or breakage resulting from inadequate packing.</li>
+                <li>Customers must ensure that all items will fit into the new premises (e.g., wardrobe, bed, sofa,
+                    etc.). We are not insured for removing doors or creating new entrances.</li>
+                <li>If any delay is caused by the customer (e.g., incomplete packing, waiting for keys, incorrect
+                    address, etc.), we reserve the right to add an additional cost to the final bill.</li>
+                <li>All moves are covered by up to £50,000 in goods in transit insurance and up to £1,000,000 in public
+                    liability insurance, valid for up to 24 hours after the move.</li>
+                <li>In the unlikely event of damage to your items, strict conditions are placed on us by our insurance
+                    company. Any damage or loss must be reported within 24 hours of the completion of your booking. If
+                    damage is reported, corroborating pictures of the damage should be provided within 72 hours of the
+                    booking. Failure to do so may result in the inability to process a damage complaint.</li>
             </ul>
         </div>
     </div>
@@ -224,7 +235,6 @@
                 Conditions</a></p>
     </footer>
     <script src="script.js"></script>
-    </form>
 </body>
 
 </html>
