@@ -76,16 +76,14 @@
             <div class="section">
                 <div class="section-title">Collection Full Address</div>
                 <div class="input-group">
-                    <label for="collection_street">Street Address:</label>
+                    <label for="collection_street">Street Address</label>
                     <input type="text" id="collection_street" name="collection_street" required>
                 </div>
-                <div class="input-group">
-                    <label for="collection_city">City:</label>
-                    <input type="text" id="collection_city" name="collection_city" required>
-                </div>
-                <div class="input-group">
-                    <label for="collection_postcode">Postal Code:</label>
-                    <input type="text" id="collection_postcode" name="collection_postcode" required>
+                <div class="input-group-address">
+                    <label for="collection_city">City</label>
+                    <input type="text" id="collection_city" name="collection_city" required size="3">
+                    <label for="collection_postcode">Postcode</label>
+                    <input type="text" id="collection_postcode" name="collection_postcode" required size="3">
                 </div>
             </div>
 
@@ -96,13 +94,11 @@
                     <label for="delivery_street">Street Address:</label>
                     <input type="text" id="delivery_street" name="delivery_street" required>
                 </div>
-                <div class="input-group">
+                <div class="input-group-address">
                     <label for="delivery_city">City:</label>
-                    <input type="text" id="delivery_city" name="delivery_city" required>
-                </div>
-                <div class="input-group">
-                    <label for="delivery_postcode">Postal Code:</label>
-                    <input type="text" id="delivery_postcode" name="delivery_postcode" required>
+                    <input type="text" id="delivery_city" name="delivery_city" required size="3">
+                    <label for="delivery_postcode">Postcode:</label>
+                    <input type="text" id="delivery_postcode" name="delivery_postcode" required size="3">
                 </div>
             </div>
 
@@ -196,10 +192,9 @@
             <div class="button-group">
                 <!-- <button type="button" id="previewButton">Preview Quotation</button> -->
                 <input type="hidden" name="redirect" value="https://web3forms.com/success">
-                <button type="submit">Submit</button>
+                <button type="submit" id="submitFormButton">Submit</button>
                 <button type="button" onclick="hidePreview()">Back</button>
             </div>
-            </form>
         </div>
     </div>
 
